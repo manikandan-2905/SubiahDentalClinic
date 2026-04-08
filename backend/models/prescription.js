@@ -10,12 +10,9 @@ const PrescriptionSchema = new mongoose.Schema({
   toothNumber: String,
   fee: Number,
   remarks: String,
-<<<<<<< HEAD
   nextVisitDate: String,
   receivedAmount: Number,
   balance: Number,
-=======
->>>>>>> a3abea51565cabad0d2f07e250f0931d98fc4613
   medicines: [{ name: String, category: String }],
 }, { timestamps: true });
 
