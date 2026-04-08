@@ -32,13 +32,10 @@ router.post('/', async (req, res) => {
     }
     const billNo = `BILL-${String(nextBillNum).padStart(4, '0')}`;
 
-<<<<<<< HEAD
     const fee = body.fee || 0;
     const receivedAmount = body.receivedAmount || 0;
     const balance = fee - receivedAmount;
 
-=======
->>>>>>> a3abea51565cabad0d2f07e250f0931d98fc4613
     const prescription = new Prescription({
       billNo,
       patient: patient._id,
@@ -47,28 +44,20 @@ router.post('/', async (req, res) => {
       treatment: body.treatment,
       problemDescription: body.problemDescription,
       toothNumber: body.toothNumber,
-<<<<<<< HEAD
       fee,
       remarks: body.remarks,
       nextVisitDate: body.nextVisitDate,
       receivedAmount,
       balance,
-=======
-      fee: body.fee || 0,
-      remarks: body.remarks,
->>>>>>> a3abea51565cabad0d2f07e250f0931d98fc4613
       medicines,
     });
 
     await prescription.save();
 
-<<<<<<< HEAD
     // Update patient's balance (add the new balance to existing)
     patient.balance = (patient.balance || 0) + balance;
     await patient.save();
 
-=======
->>>>>>> a3abea51565cabad0d2f07e250f0931d98fc4613
     // Also append a visit record to patient.visits for quick history
     const visit = {
       date: new Date().toLocaleString(),
@@ -78,14 +67,10 @@ router.post('/', async (req, res) => {
       problem: body.problemDescription || body.diagnosis || '',
       // store medicines as comma-separated names for visit history display
       medicines: (Array.isArray(body.medicines) ? body.medicines.map(m => m.name).join(', ') : ''),
-<<<<<<< HEAD
       fee,
       nextVisitDate: body.nextVisitDate,
       receivedAmount,
       balance
-=======
-      fee: body.fee || 0
->>>>>>> a3abea51565cabad0d2f07e250f0931d98fc4613
     };
 
     patient.visits.unshift(visit);
@@ -98,7 +83,6 @@ router.post('/', async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
 // GET /api/prescriptions - list all prescriptions
 router.get('/', async (req, res) => {
   try {
@@ -109,8 +93,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-=======
->>>>>>> a3abea51565cabad0d2f07e250f0931d98fc4613
 // GET /api/prescriptions/patient/:patientId - list prescriptions for a patient
 router.get('/patient/:patientId', async (req, res) => {
   try {
