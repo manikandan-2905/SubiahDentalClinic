@@ -35,7 +35,6 @@ router.post('/', async (req, res) => {
     const body = req.body || {};
     const patientId = await generatePatientId();
     const patient = new Patient({ patientId, ...body });
-<<<<<<< HEAD
     
     // Validate before saving
     const error = patient.validateSync();
@@ -48,12 +47,6 @@ router.post('/', async (req, res) => {
   } catch (err) {
     console.error('Error creating patient:', err.message, err);
     res.status(500).json({ error: err.message || 'Failed to create patient' });
-=======
-    await patient.save();
-    res.status(201).json(patient);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
->>>>>>> a3abea51565cabad0d2f07e250f0931d98fc4613
   }
 });
 
