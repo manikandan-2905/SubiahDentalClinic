@@ -1242,12 +1242,12 @@ const Clients = () => {
                 />
               </div>
 
-              <div className="client-counter" style={{ marginLeft: 'auto', marginRight: '20px' }}>
+              <div className="client-counter" style={{ marginLeft: 'auto', marginRight: '50px' }}>
                 <span style={{ fontSize: '0.85rem', opacity: 0.9 }}>Total Patients</span>
                 <div style={{ fontSize: '1.5rem', fontWeight: 800 }}>{filteredClients.length}</div>
               </div>
 
-              <button className="btn-add-modern" onClick={handleOpenAddModal} style={{ marginLeft: '-40px' }}>
+              <button className="btn-add-modern" onClick={handleOpenAddModal} style={{ marginLeft: '-60px',width: '150px' }}>
                 <Icons.Plus /> Add Patients
               </button>
             </div>
