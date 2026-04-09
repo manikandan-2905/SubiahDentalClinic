@@ -1247,7 +1247,7 @@ const Clients = () => {
                 <div style={{ fontSize: '1.5rem', fontWeight: 800 }}>{filteredClients.length}</div>
               </div>
 
-              <button className="btn-add-modern" onClick={handleOpenAddModal}>
+              <button className="btn-add-modern" onClick={handleOpenAddModal} style={{ marginLeft: '-40px' }}>
                 <Icons.Plus /> Add Patients
               </button>
             </div>
