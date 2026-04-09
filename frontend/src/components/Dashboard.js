@@ -15,15 +15,14 @@ const Dashboard = () => {
   const [animatedStats, setAnimatedStats] = useState(false);
 
   // Clinic details
-  const CLINIC_NAME = 'Dr. SUBBIAH Dental Clinic';
+  const CLINIC_NAME = ' SUBBIAH Dental Clinic';
   const DOCTOR_NAME = 'Dr. SUBBIAH';
-  const CLINIC_CONTACT = '+91-9876543210'; // Replace with actual contact
+  const CLINIC_CONTACT = '+91-98943 08857'; // Replace with actual contact
 
   // live data from backend
   const [patients, setPatients] = useState([]);
   const [prescriptions, setPrescriptions] = useState([]);
-
-  const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:5000';
+const API_BASE = 'https://subiahdentalclinic.onrender.com';
 
   useEffect(() => {
     const load = async () => {
@@ -152,7 +151,7 @@ const Dashboard = () => {
     const cleanMobile = mobile.replace(/[^0-9]/g, '');
     const message = `Dear ${patientName},
 
-This is a friendly reminder from "${CLINIC_NAME}" regarding your upcoming appointment with ${DOCTOR_NAME}.
+This is a friendly reminder from "${patientName}" regarding your upcoming appointment with ${DOCTOR_NAME}.
 
 📅 Date: ${appt.nextVisitDateStr}
 🦷 Treatment: ${appt.diagnosis || appt.problemDescription || appt.treatment || 'Consultation'}
@@ -806,9 +805,9 @@ ${CLINIC_NAME}`;
                 <h1 style={{ fontWeight: 800, fontSize: '2.5rem', marginBottom: '10px' }}>
                   Welcome back, Dr. SUBBIAH! 👋
                 </h1>
-                <p style={{ fontSize: '1.2rem', opacity: 0.9, margin: 0 }}>
+                {/* <p style={{ fontSize: '1.2rem', opacity: 0.9, margin: 0 }}>
                   You have {stats.totalAppointments} appointments today. {stats.pendingPayments} bills pending payment.
-                </p>
+                </p> */}
               </Col>
               <Col md={4} xs={12} className="text-md-end">
                 {/* welcome-date-box class lets mobile CSS resize this independently */}
