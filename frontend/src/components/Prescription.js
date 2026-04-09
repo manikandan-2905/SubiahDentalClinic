@@ -65,12 +65,12 @@ const Prescription = () => {
   // Patients loaded from backend
   const [clients, setClients] = useState([]);
   const [prescriptions, setPrescriptions] = useState([]);
-  const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:5000';
+  const API_BASE = 'https://subiahdentalclinic.onrender.com';
 
   useEffect(() => {
     const loadPatients = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/patients`);
+        const res = await fetch(`https://subiahdentalclinic.onrender.com/api/patients`);
         const data = await res.json();
         if (Array.isArray(data)) {
           // map patientId -> id for compatibility with existing UI
